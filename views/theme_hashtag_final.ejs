@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+        <title>궁석궁석</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <link rel="stylesheet" href="../public/css/theme_hashtag_final.css" />
+    </head>
+    <body>
+        <%- include('header')%>
+
+        <div class="contents">
+            <div class="hashtag_section">
+                <div class="color_bgcolor"></div>
+                <button type="button" onclick="refreshTag()" class="btn_refresh">새로고침</button>
+                <div class="buttons">
+                    <button class="hashtag" id="direct_All" data-hashtag="전체">#전체</button>
+                    <!-- onclick="btnAll()" -->
+                    <button class="hashtag" id="palace_temple" data-hashtag="고궁/절">#고궁/절</button>
+                    <button class="hashtag" id="museum_place" data-hashtag="박물관/미술관/기념관">
+                        #박물관/미술관/기념관
+                    </button>
+                    <button class="hashtag" id="park" data-hashtag="공원">#공원</button>
+                    <button class="hashtag" id="historical_landmark" data-hashtag="역사적명소">#역사적명소</button>
+                    <button class="hashtag" data-hashtag="자연">#자연</button>
+                    <button class="hashtag" data-hashtag="힐링">#힐링</button>
+                    <button class="hashtag" data-hashtag="역사">#역사</button>
+                    <button class="hashtag" data-hashtag="데이트">#데이트</button>
+                    <button class="hashtag" data-hashtag="산책">#산책</button>
+                    <button class="hashtag" data-hashtag="실내">#실내</button>
+                    <button class="hashtag" data-hashtag="가족과함께">#가족과함께</button>
+                    <button class="hashtag" data-hashtag="종로가볼만한곳">#종로가볼만한곳</button>
+                    <button class="hashtag" data-hashtag="아이와함께">#아이와함께</button>
+                    <button class="hashtag" data-hashtag="봄꽃여행">#봄꽃여행</button>
+                    <button class="hashtag" data-hashtag="나들이">#나들이</button>
+                    <button class="hashtag" data-hashtag="공연">#공연</button>
+                    <button class="hashtag" data-hashtag="전시">#전시</button>
+                    <button class="hashtag" data-hashtag="휴식하기좋은곳">#휴식하기좋은곳</button>
+                    <button class="hashtag" data-hashtag="사찰여행">#사찰여행</button>
+                    <button class="hashtag" data-hashtag="템플스테이">#템플스테이</button>
+                    <button class="hashtag" data-hashtag="북한산">#북한산</button>
+                    <button class="hashtag" data-hashtag="도봉산">#도봉산</button>
+                    <button class="hashtag" data-hashtag="문화공간">#문화공간</button>
+                    <button class="hashtag" data-hashtag="유네스코세계문화유산">#유네스코세계문화유산</button>
+                </div>
+            </div>
+
+            <div class="modal">
+                <button type="button" onclick="refreshTag()" class="btn_refresh">새로고침</button>
+                <button type="button" class="hashtag-btn-close-modal">닫기</button>
+
+                <div class="modal_wrap">
+                    <div class="modal-head">
+                        <div class="title">해시태그</div>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="body-wrap">
+                            <li class="hashtag-btn">
+                                <button class="hashtag" id="modal_All" data-hashtag="전체">#전체</button>
+                                <!-- onclick="btnAll()" -->
+                                <button class="hashtag" id="palace_temple" data-hashtag="고궁/절">#고궁/절</button>
+                                <button class="hashtag" id="museum_place" data-hashtag="박물관/미술관/기념관">
+                                    #박물관/미술관/기념관
+                                </button>
+                                <button class="hashtag" id="park" data-hashtag="공원">#공원</button>
+                                <button class="hashtag" id="historical_landmark" data-hashtag="역사적명소">
+                                    #역사적명소
+                                </button>
+                                <button class="hashtag" data-hashtag="자연">#자연</button>
+                                <button class="hashtag" data-hashtag="힐링">#힐링</button>
+                                <button class="hashtag" data-hashtag="역사">#역사</button>
+                                <button class="hashtag" data-hashtag="데이트">#데이트</button>
+                                <button class="hashtag" data-hashtag="산책">#산책</button>
+                                <button class="hashtag" data-hashtag="실내">#실내</button>
+                                <button class="hashtag" data-hashtag="가족과함께">#가족과함께</button>
+                                <button class="hashtag" data-hashtag="종로가볼만한곳">#종로가볼만한곳</button>
+                                <button class="hashtag" data-hashtag="아이와함께">#아이와함께</button>
+                                <button class="hashtag" data-hashtag="봄꽃여행">#봄꽃여행</button>
+                                <button class="hashtag" data-hashtag="나들이">#나들이</button>
+                                <button class="hashtag" data-hashtag="공연">#공연</button>
+                                <button class="hashtag" data-hashtag="전시">#전시</button>
+                                <button class="hashtag" data-hashtag="휴식하기좋은곳">#휴식하기좋은곳</button>
+                                <button class="hashtag" data-hashtag="사찰여행">#사찰여행</button>
+                                <button class="hashtag" data-hashtag="템플스테이">#템플스테이</button>
+                                <button class="hashtag" data-hashtag="북한산">#북한산</button>
+                                <button class="hashtag" data-hashtag="도봉산">#도봉산</button>
+                                <button class="hashtag" data-hashtag="문화공간">#문화공간</button>
+                                <button class="hashtag" data-hashtag="유네스코세계문화유산">
+                                    #유네스코세계문화유산
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-foot">
+                        <button type="button" class="btn-foot cancel">취소</button>
+                        <button type="button" class="btn-foot confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 해시태그 모달에서 선택했을때 어떤거 선택했는지 모달창 닫았을떄 보이게끔. -->
+            <div class="section_hashtag">
+                <button class="hashtag-btn-open-modal">#해시태그 선택</button>
+                <div class="selectedHashtag">
+                    <p class="hashtag_list" style="font-weight: bold">#전체</p>
+                </div>
+            </div>
+
+            <div class="content-wrap">
+                <!-- <li> -->
+                <li class="content-container">
+                    <div class="content-img-section">
+                        <img src="" alt="사진" />
+                    </div>
+                    <div class="content-preview-section">
+                        <div class="content-preview-header"></div>
+                        <div class="content-preview-address"></div>
+                        <div class="content-preview-tag"></div>
+                    </div>
+                </li>
+                <!-- </li> -->
+                <!-- <li> -->
+                <li class="content-container">
+                    <div class="content-img-section">
+                        <img src="" alt="사진" />
+                    </div>
+                    <div class="content-preview-section">
+                        <div class="content-preview-header"></div>
+                        <div class="content-preview-address"></div>
+                        <div class="content-preview-tag"></div>
+                    </div>
+                </li>
+                <!-- </li> -->
+                <!-- <li> -->
+                <li class="content-container">
+                    <div class="content-img-section">
+                        <img src="" alt="사진" />
+                    </div>
+                    <div class="content-preview-section">
+                        <div class="content-preview-header"></div>
+                        <div class="content-preview-address"></div>
+                        <div class="content-preview-tag"></div>
+                    </div>
+                </li>
+                <!-- </li> -->
+                <!-- <li> -->
+                <li class="content-container">
+                    <div class="content-img-section">
+                        <img src="" alt="사진" />
+                    </div>
+                    <div class="content-preview-section">
+                        <div class="content-preview-header"></div>
+                        <div class="content-preview-address"></div>
+                        <div class="content-preview-tag"></div>
+                    </div>
+                </li>
+                <!-- </li> -->
+                <!-- <li> -->
+                <li class="content-container">
+                    <div class="content-img-section">
+                        <img src="" alt="사진" />
+                    </div>
+                    <div class="content-preview-section">
+                        <div class="content-preview-header"></div>
+                        <div class="content-preview-address"></div>
+                        <div class="content-preview-tag"></div>
+                    </div>
+                </li>
+                <!-- </li> -->
+                <!-- <li> -->
+                <li class="content-container">
+                    <div class="content-img-section">
+                        <img src="" alt="사진" />
+                    </div>
+                    <div class="content-preview-section">
+                        <div class="content-preview-header"></div>
+                        <div class="content-preview-address"></div>
+                        <div class="content-preview-tag"></div>
+                    </div>
+                </li>
+                <!-- </li> -->
+            </div>
+            <div class="page-numbering"></div>
+            <div id="search-result-message"></div>
+        </div>
+
+        <footer>
+            <div class="footer_section1">
+                <span class="footLogo"> <span class="team">Team</span>ITZO </span>
+            </div>
+            <div class="footer_section2">
+                <div class="sel_member">
+                    <select name="관광정보 선택" id="relation2" required>
+                        <option value="" class="default" disabled selected>관광정보</option>
+                        <option value="https://knto.or.kr/index" title="새창">관광불편신고센터</option>
+                        <option
+                            value="https://korean1.visitkorea.or.kr/kor/tt/pr_gallery/new_photo_gallery/main/main_ssot.jsp"
+                            title="새창"
+                        >
+                            관광사진갤러리
+                        </option>
+                        <option value="https://www.templestay.com/" title="새창">템플스테이</option>
+                        <option value="https://api.visitkorea.or.kr/#/" title="새창">TourAPI4.0</option>
+                    </select>
+
+                    <button class="link_view" title="선택관광정보로 새창 열림" onclick="goRelation2()">이동</button>
+                </div>
+                <div class="sel_member">
+                    <select name="유관기관 선택" id="relation" required>
+                        <option value="" class="default" disabled selected>유관기관</option>
+                        <option value="http://www.mmca.go.kr" title="새창">국립현대미술관</option>
+                        <option value="http://www.seoulwelcome.com" title="새창">서울관광재단</option>
+                        <option value="https://www.museum.go.kr/site/main/home" title="새창">국립중앙박물관</option>
+                        <option value="https://www.mcst.go.kr/kor/main.jsp" title="새창">문화체육관광부</option>
+                        <option value="https://www.culture.go.kr/wday/index.do" title="새창">문화가 있는 날</option>
+                        <option value="http://mfis.mpva.go.kr/" title="새창">현충시설정보서비스</option>
+                        <option value="https://parks.seoul.go.kr/template/sub/naksan.do" title="새창">
+                            서울의 공원
+                        </option>
+                    </select>
+                    <button class="link_view" title="유관기관으로 새창 열림" onclick="goRelation()">이동</button>
+                </div>
+            </div>
+            <div class="footer_section3">
+                <div>
+                    <a href="https://api.visitkorea.or.kr/#/" target="_blank" title="새창">
+                        <img
+                            class="img1"
+                            src="https://korean.visitkorea.or.kr/resources/images/common/logo_foot_api.png?v=20230601001"
+                            alt="TourAPI 4.0"
+                        />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://knto.or.kr/index" target="_blank" title="새창">
+                        <img
+                            class="img2"
+                            src="https://cdn.visitkorea.or.kr/resources/images/common/logo_foot_gg.png"
+                            alt="한국관광공사"
+                        />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://korean.visitkorea.or.kr/main/main.do" target="_blank" title="새창">
+                        <img class="img3" src="../public/img/icon/logo-guseogguseog.jpeg" alt="대한민국구석구석" />
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <div class="go-to-top">
+            <a href="#" class="btn_top_move"></a>
+        </div>
+        <script type="module" src="../public/js/content_object.js"></script>
+        <script type="module" src="../public/js/theme_hashtag_final.js"></script>
+    </body>
+</html>
