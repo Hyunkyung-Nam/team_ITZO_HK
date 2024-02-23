@@ -136,7 +136,7 @@ $('.page-move').click(function () {
     const contentName = $('.active').children('p').text();
     console.log(contentName);
     localStorage.setItem('name', contentName);
-    window.location.href = '/';
+    window.location.href = '/content';
 });
 
 $('.theme-slide').click(function () {
